@@ -56,7 +56,7 @@ podTemplate(label: 'mobile-cli-go', cloud: "openshift", containers: [goSlaveCont
 
         stage ("Integration") {
           sh "oc project pr-integration-aerogear-org-mobile-cli-repo"
-          sh "go test -v ./integration -args -prefix=test-${sanitizeObjectName(env.BRANCH_NAME)}-build-$BUILD_NUMBER -namespace=`oc project -q` -executable=`pwd`/mobile"
+          sh "go test  -timeout 30m -v ./integration -args -prefix=test-${sanitizeObjectName(env.BRANCH_NAME)}-build-$BUILD_NUMBER -namespace=`oc project -q` -executable=`pwd`/mobile"
         }
       }
     }
