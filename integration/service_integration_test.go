@@ -114,7 +114,7 @@ func createInstance(t *testing.T, si *ProvisionServiceParams) {
 
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		t.Fatalf("Failed to create service instance %s: %s", si.ServiceName, output)
+		t.Fatalf("Failed to create service instance '%s': '%s' with error: '%s'", si.ServiceName, output, err)
 	}
 
 	fmt.Println(string(output))
