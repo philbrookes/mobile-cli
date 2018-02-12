@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/golang/crypto)](https://goreportcard.com/report/github.com/golang/crypto)
+
 ## The Mobile CLI is a standalone CLI that can also be used a kubectl / oc plugin
 
 ## Note this is still under construction and not yet fit for use
