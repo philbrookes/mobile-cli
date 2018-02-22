@@ -83,6 +83,9 @@ kubectl plugin mobile get clientconfig`,
 				var svcConfig *ServiceConfig
 				var err error
 				includedService := true
+				fmt.Printf("service: %+v\n", svc)
+				thing, _ := ccc.k8Client.CoreV1().Services(ns).Get(svc.Name, v1.GetOptions{})
+				fmt.Printf("service? %+v\n", thing)
 				for _, excluded := range client.Spec.ExcludedServices {
 					if strings.TrimSpace(excluded) == strings.TrimSpace(svc.ID) {
 						includedService = false
